@@ -1,0 +1,192 @@
+@font-face {
+    font-family: 'opensans';
+    src: url('fonts/opensans/opensans-regular-webfont.woff2') format('woff2'),
+         url('fonts/opensans/opensans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'opensans';
+    src: url('fonts/opensans/opensans-bold-webfont.woff2') format('woff2'),
+         url('fonts/opensans/opensans-bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+html {
+    /* 62.5% of 16px = 10px */
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0px;
+    font-family: "opensans", Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    letter-spacing: 0px;
+    word-spacing: 3px;
+}
+
+.wrapper {
+    display: grid;
+    grid-template: 100vh / 70fr 20fr;
+    /* grid-template-areas: "items" "shop"; */
+    justify-items: stretch;
+    align-items: stretch;
+    justify-content: center;
+    align-content: center;
+    margin: 0px;
+    /* gap: 10px; */
+}
+
+.itemsdisplay {
+    /*grid-area: items;*/
+    background: white;
+    display: grid;
+    grid-template: repeat(auto-fill, 400px) / repeat(5, 300px);
+    color: white;
+    text-align: center;
+    /*justify-items: stretch;
+    align-items: stretch;*/
+    /*justify-content: center;
+    align-content: center;*/
+}
+
+.shoppingcartbg {
+    /* grid-area: shop; */
+    border-left: 1px solid rgb(200, 200, 200);
+    background: rgb(240, 240, 240);
+}
+
+#shoppingcarttitle {
+    text-align: center;
+    border-bottom-left-radius: 15px;
+    color: white;
+    background: green;
+    box-shadow: 0 0 15px grey;
+}
+
+.emptycart {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 1rem;
+}
+
+.filledcart {
+    margin-top: 1rem;
+}
+
+tr.cart:nth-child(even) {
+    color: rgb(60, 60, 60);
+    background: rgba(230, 230, 230, 0.5);
+}
+
+tr.cart:nth-child(odd) {
+    color: rgb(70, 70, 70);
+    background: rgba(220, 220, 220, 0.5);
+}
+
+.item {
+    border-radius: 15px;
+    background: green;
+    /*background: url(../images/PizzaAiBroccoli.png);
+    background-size: cover;*/
+    display: grid;
+    grid-gap: 1.7rem;
+    grid-template-rows: min-content 4.5rem auto 4rem;
+    grid-template-areas:
+        "product-image"
+        "product-title"
+        "product-description"
+        "product-price";
+    justify-content: space-between;
+    cursor: grab;
+    justify-items: stretch;
+    align-items: stretch;
+    justify-content: stretch;
+    align-content: stretch;
+    margin: 10px;
+    box-shadow: 0 0 15px grey;
+    /*width: 100px;
+    height: 100px;*/
+}
+
+.item:active {
+    position: relative;
+    top: 3px;
+}
+
+.product-image {
+    grid-area: product-image;
+    border-radius: 10px 10px 8px 8px;
+    border: 1px solid #grey;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.product-title {
+    grid-area: product-title;
+    font-weight: bold;
+    font-size: 2.2rem;
+    margin; 5px;
+}
+
+.product-description {
+    grid-area: product-description;
+    font-size: 1.7rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: left;
+}
+
+.product-price {
+    grid-area: product-price;
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.pay-and-order-button {
+    /*box-shadow: 0px 0px 5px 5px rgba(50, 50, 50, 0.3);*/
+    background-color: rgb(200, 30, 30);
+    border-radius: 15px;
+    border: 1px solid rgb(150, 0, 0);
+    display:inline-block;
+    cursor: grab;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    padding:16px 31px;
+}
+
+.pay-and-order-button:active {
+    position: relative;
+    top: 1px;
+}
+
+.cancel-button {
+    /*box-shadow: 0px 0px 5px 5px rgba(50, 50, 50, 0.3);*/
+    background-color: rgb(20, 160, 180);
+    border-radius: 15px;
+    border: 1px solid rgb(10, 10, 100);
+    display:inline-block;
+    cursor: grab;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    padding:16px 31px;
+}
+
+.cancel-button:active {
+    position: relative;
+    top: 1px;
+}
