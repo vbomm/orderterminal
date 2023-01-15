@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Terminal</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="wrapper">
+  <div class="itemsdisplay">
+    <div class="item" th:each="item : ${items}" th:onclick="|window.location.href='api/add/${item.id}'|">
+      <img class="product-image" th:src="@{${'images/' + item.image}}"
+           th:alt="${item.title}" width="250" height="150" />
+      <div class="product-title" th:text="${item.title}" />
+      <div class="product-description" th:text="${item.description}" />
+      <div class="product-price" th:text=" ${item.price} + ' €'" />
+    </div>
+  </div>
+  <div class="shoppingcartbg">
+    <div id="shoppingcarttitle">
+      Shopping Cart
+    </div>
+    <div class="emptycart" th:if="${cart==null or cart.empty}">
+      Your shopping cart is empty
+    </div>
+    <div class="filledcart" th:if="${!cart.empty}">
+      <table style="width:100%">
+        <thead>
+        <tr>
+          <th style="width:60%">Product</th>
+          <th style="width:20%">Price</th>
+          <th style="width:20%">Amount</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="cart" th:each="cartItem : ${cart}">
+          <td th:text="${cartItem.title}"/>
+          <td><span th:text="${cartItem.unitPrice}"/> €</td>
+          <td th:text="${cartItem.quantity}"/>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+          <th colspan="3">Total: <span th:text="${fullPrice}"></span> €</th>
+        </tr>
+        </tfoot>
+      </table>
+      <div class="buttons">
+        <form action="#" th:action="@{api/payAndOrder}" th:object="${item}" method="get" style="display: inline;">
+          <button class="pay-and-order-button" type="payAndOrder">Pay&Order</button>
+        </form>
+        <form action="#" th:action="@{api/cancel}" th:object="${item}" method="get" style="display: inline;">
+          <button class="cancel-button" type="Cancel" >Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
