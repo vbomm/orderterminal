@@ -119,8 +119,7 @@ tr.cart:nth-child(odd) {
 }
 
 .item:active {
-    position: relative;
-    top: 3px;
+    transform: translate(0px, 3px);
 }
 
 .product-image {
@@ -174,8 +173,7 @@ tr.cart:nth-child(odd) {
 }
 
 .pay-and-order-button:active {
-    position: relative;
-    top: 1px;
+    transform: translate(0px, 2px);
 }
 
 .cancel-button {
@@ -192,6 +190,5 @@ tr.cart:nth-child(odd) {
 }
 
 .cancel-button:active {
-    position: relative;
-    top: 1px;
+    transform: translate(0px, 2px);
 }
