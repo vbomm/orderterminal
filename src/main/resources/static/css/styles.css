@@ -74,7 +74,8 @@ body {
     margin-top: 1rem;
 }
 
-.filledcart {
+.filled-cart {
+    font-size: 2rem;
     margin-top: 1rem;
 }
 
@@ -86,6 +87,10 @@ tr.cart:nth-child(even) {
 tr.cart:nth-child(odd) {
     color: rgb(70, 70, 70);
     background: rgba(220, 220, 220, 0.5);
+}
+
+.full-price {
+    font-size: 2.5rem;
 }
 
 .item {

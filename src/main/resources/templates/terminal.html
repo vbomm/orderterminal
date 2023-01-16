@@ -23,7 +23,7 @@
     <div class="emptycart" th:if="${cart==null or cart.empty}">
       Your shopping cart is empty
     </div>
-    <div class="filledcart" th:if="${!cart.empty}">
+    <div class="filled-cart" th:if="${!cart.empty}">
       <table style="width:100%">
         <thead>
         <tr>
@@ -40,7 +40,7 @@
         </tr>
         </tbody>
         <tfoot>
-        <tr>
+        <tr class="full-price">
           <th colspan="3">Total: <span th:text="${fullPrice}"></span> €</th>
         </tr>
         </tfoot>
