@@ -1,3 +1,26 @@
+:root {
+    --itemsdisplay-background: white;
+    --itemsdisplay-color: white;
+    --shoppingcartbg-border-left: rgb(200, 200, 200);
+    --shoppingcartbg-background: rgb(240, 240, 240);
+    --shoppingcarttitle-color: white;
+    --shoppingcarttitle-background: green;
+    --shoppingcarttitle-box-shadow: grey;
+    --cart-nth-child-even-color: rgb(60, 60, 60);
+    --cart-nth-child-even-background: rgba(230, 230, 230, 0.5);
+    --cart-nth-child-odd-color: rgb(70, 70, 70);
+    --cart-nth-child-odd-background: rgba(220, 220, 220, 0.5);
+    --item-background: green;
+    --item-box-shadow: grey;
+    --product-image-box-shadow: rgba(0,0,0,0.75);
+    --pay-and-order-button-background-color: rgb(200, 30, 30);
+    --pay-and-order-button-border: rgb(150, 0, 0);
+    --pay-and-order-button-color: white;
+    --cancel-button-background-color: rgb(20, 160, 180);
+    --cancel-button-border: rgb(10, 10, 100);
+    --cancel-button-color: white;
+}
+
 @font-face {
     font-family: 'opensans';
     src: url('fonts/opensans/opensans-regular-webfont.woff2') format('woff2'),
@@ -43,10 +66,10 @@ body {
 
 .itemsdisplay {
     /*grid-area: items;*/
-    background: white;
+    background: var(--itemsdisplay-background);
     display: grid;
     grid-template: repeat(auto-fill, 400px) / repeat(5, 300px);
-    color: white;
+    color: var(--itemsdisplay-color);
     text-align: center;
     /*justify-items: stretch;
     align-items: stretch;*/
@@ -56,16 +79,16 @@ body {
 
 .shoppingcartbg {
     /* grid-area: shop; */
-    border-left: 1px solid rgb(200, 200, 200);
-    background: rgb(240, 240, 240);
+    border-left: 1px solid var(--shoppingcartbg-border-left);
+    background: var(--shoppingcartbg-background);
 }
 
 #shoppingcarttitle {
     text-align: center;
     border-bottom-left-radius: 15px;
-    color: white;
-    background: green;
-    box-shadow: 0 0 15px grey;
+    color: var(--shoppingcarttitle-color);
+    background: var(--shoppingcarttitle-background);
+    box-shadow: 0 0 15px var(--shoppingcarttitle-box-shadow);
 }
 
 .emptycart {
@@ -80,13 +103,13 @@ body {
 }
 
 tr.cart:nth-child(even) {
-    color: rgb(60, 60, 60);
-    background: rgba(230, 230, 230, 0.5);
+    color: var(--cart-nth-child-even-color);
+    background: var(--cart-nth-child-even-background);
 }
 
 tr.cart:nth-child(odd) {
-    color: rgb(70, 70, 70);
-    background: rgba(220, 220, 220, 0.5);
+    color: var(--cart-nth-child-odd-color);
+    background: var(--cart-nth-child-odd-background);
 }
 
 .full-price {
@@ -95,7 +118,7 @@ tr.cart:nth-child(odd) {
 
 .item {
     border-radius: 15px;
-    background: green;
+    background: var(--item-background);
     /*background: url(../images/PizzaAiBroccoli.png);
     background-size: cover;*/
     display: grid;
@@ -113,7 +136,7 @@ tr.cart:nth-child(odd) {
     justify-content: stretch;
     align-content: stretch;
     margin: 10px;
-    box-shadow: 0 0 15px grey;
+    box-shadow: 0 0 15px var(--item-box-shadow);
     /*width: 100px;
     height: 100px;*/
 }
@@ -126,7 +149,7 @@ tr.cart:nth-child(odd) {
     grid-area: product-image;
     border-radius: 10px 10px 8px 8px;
     border: 1px solid #grey;
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px var(--product-image-box-shadow);
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -160,13 +183,12 @@ tr.cart:nth-child(odd) {
 }
 
 .pay-and-order-button {
-    /*box-shadow: 0px 0px 5px 5px rgba(50, 50, 50, 0.3);*/
-    background-color: rgb(200, 30, 30);
+    background-color: var(--pay-and-order-button-background-color);
     border-radius: 15px;
-    border: 1px solid rgb(150, 0, 0);
+    border: 1px solid var(--pay-and-order-button-border);
     display:inline-block;
     cursor: grab;
-    color: white;
+    color: var(--pay-and-order-button-color);
     font-size: 2rem;
     font-weight: bold;
     padding:16px 31px;
@@ -177,13 +199,12 @@ tr.cart:nth-child(odd) {
 }
 
 .cancel-button {
-    /*box-shadow: 0px 0px 5px 5px rgba(50, 50, 50, 0.3);*/
-    background-color: rgb(20, 160, 180);
+    background-color: var(--cancel-button-background-color);
     border-radius: 15px;
-    border: 1px solid rgb(10, 10, 100);
+    border: 1px solid var(--cancel-button-border);
     display:inline-block;
     cursor: grab;
-    color: white;
+    color: var(--cancel-button-color);
     font-size: 2rem;
     font-weight: bold;
     padding:16px 31px;
