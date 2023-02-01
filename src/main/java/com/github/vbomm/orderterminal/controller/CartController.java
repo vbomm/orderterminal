@@ -58,7 +58,7 @@ public class CartController {
         Order order = orders.get(0);
 
         List<OrderedItem> items = orderedItemDataAccessObject.findByOrderId(order.getId());
-        for (var item : items)
+        for (var item : items) // at the moment only deletes, later copy to order database
             orderedItemDataAccessObject.delete(item);
 
         System.out.println(httpSession.getId() + " payAndOrder");
