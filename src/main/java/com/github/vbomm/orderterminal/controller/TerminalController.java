@@ -42,26 +42,6 @@ public class TerminalController {
         return itemDataAccessObject.getAllItems();
     }
 
-    /*private List<List<Item>> generateRows() {
-        List<Item> items = itemDataAccessObject.getAllItems();
-        List<List<Item>> rows = new ArrayList<>();
-
-        rows.add(new ArrayList<>());
-
-        int row = 0;
-        int itemsPerRow = 5;
-        for (int i = 0; i < items.size(); i++) {
-            if (i != 0 && i % itemsPerRow == 0) {
-                row++;
-                rows.add(new ArrayList<>());
-            }
-
-            rows.get(row).add(items.get(i));
-        }
-
-        return rows;
-    }*/
-
     private List<CartItem> generateCart(HttpSession httpSession, Model model) {
         List<Order> orders = orderDataAccessObject.findBySessionAndStatus(httpSession.getId(), 0);
         Order order;
